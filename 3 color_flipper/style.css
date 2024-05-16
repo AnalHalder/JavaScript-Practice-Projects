@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(255, 0, 0);
+}
+div{
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+button{
+   cursor: pointer;
+}
+

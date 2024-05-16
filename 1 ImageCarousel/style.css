@@ -1,0 +1,35 @@
+img{
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container .carousel{
+    padding: 10px;
+    background-color:aliceblue;
+}
+.image{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 5px; 
+}
+button{
+    width: 80px;
+    font-size: 1.2rem;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+button:hover{
+   background-color: darkmagenta;
+}
