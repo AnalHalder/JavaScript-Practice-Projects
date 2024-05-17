@@ -7,16 +7,16 @@ const b6 = document.querySelector('.b6');
 const b7 = document.querySelector('.b7');
 const b8 = document.querySelector('.b8');
 const b9 = document.querySelector('.b9');
-const winPatterns = [
-    [0, 1, 2],
-    [0, 3, 6],
-    [0, 4, 8],
-    [1, 4, 7],
-    [2, 5, 8],
-    [2, 4, 6],
-    [3, 4, 5],
-    [6, 7, 8],
-];
+// const winPatterns = [
+//     [0, 1, 2],
+//     [0, 3, 6],
+//     [0, 4, 8],
+//     [1, 4, 7],
+//     [2, 5, 8],
+//     [2, 4, 6],
+//     [3, 4, 5],
+//     [6, 7, 8],
+// ];
 let arr = new Array(9);
 let flag = true;
 let count = 0;
