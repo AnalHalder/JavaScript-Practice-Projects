@@ -12,6 +12,7 @@ copy.addEventListener('click',()=>{
 range.addEventListener('change',()=>{
     if(range.value<=6) {
         range.value=6;
+        generatePassword();
         return;
     }
     generatePassword();
