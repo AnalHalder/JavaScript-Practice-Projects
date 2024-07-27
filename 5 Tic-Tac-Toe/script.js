@@ -7,16 +7,17 @@ const b6 = document.querySelector('.b6');
 const b7 = document.querySelector('.b7');
 const b8 = document.querySelector('.b8');
 const b9 = document.querySelector('.b9');
-// const winPatterns = [
-//     [0, 1, 2],
-//     [0, 3, 6],
-//     [0, 4, 8],
-//     [1, 4, 7],
-//     [2, 5, 8],
-//     [2, 4, 6],
-//     [3, 4, 5],
-//     [6, 7, 8],
-// ];
+const blocks = [b1, b2, b3, b4, b5, b6, b7, b8, b9];
+const winPatterns = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+];
 let arr = new Array(9);
 let flag = true;
 let count = 0;
@@ -39,27 +40,23 @@ function displayValue(btn, idx) {
     check();
     count++;
 }
-
+function result(sign) {
+    window.alert(`player ${sign} won`)
+    for (let i = 0; i < 9; i++) {
+        blocks[i].setAttribute("disabled", "")
+    }
+}
 function check() {
-    if (arr[0] == 'X' && arr[1] == 'X' && arr[2] == 'X') window.alert('player X won')
-    else if (arr[0] == 'X' && arr[3] == 'X' && arr[6] == 'X') window.alert('player X won')
-    else if (arr[0] == 'X' && arr[4] == 'X' && arr[8] == 'X') window.alert('player X won')
-    else if (arr[1] == 'X' && arr[4] == 'X' && arr[7] == 'X') window.alert('player X won')
-    else if (arr[2] == 'X' && arr[5] == 'X' && arr[8] == 'X') window.alert('player X won')
-    else if (arr[2] == 'X' && arr[4] == 'X' && arr[6] == 'X') window.alert('player X won')
-    else if (arr[3] == 'X' && arr[4] == 'X' && arr[5] == 'X') window.alert('player X won')
-    else if (arr[6] == 'X' && arr[7] == 'X' && arr[8] == 'X') window.alert('player X won')
-
-    else if (arr[0] == 'O' && arr[1] == 'O' && arr[2] == 'O') window.alert('player O won')
-    else if (arr[0] == 'O' && arr[3] == 'O' && arr[6] == 'O') window.alert('player O won')
-    else if (arr[0] == 'O' && arr[4] == 'O' && arr[8] == 'O') window.alert('player O won')
-    else if (arr[1] == 'O' && arr[4] == 'O' && arr[7] == 'O') window.alert('player O won')
-    else if (arr[2] == 'O' && arr[5] == 'O' && arr[8] == 'O') window.alert('player O won')
-    else if (arr[2] == 'O' && arr[4] == 'O' && arr[6] == 'O') window.alert('player O won')
-    else if (arr[3] == 'O' && arr[4] == 'O' && arr[5] == 'O') window.alert('player O won')
-    else if (arr[6] == 'O' && arr[7] == 'O' && arr[8] == 'O') window.alert('player O won')
-
-    else if (count == 9) window.alert('no one won');
+    for(let i=0;i<9;i++){
+            if(arr[winPatterns[i][0]]=='X' && arr[winPatterns[i][1]]=='X' && arr[winPatterns[i][2]]=='X'){
+                result('X');
+                return;
+            }
+            else if(arr[winPatterns[i][0]]=='O' && arr[winPatterns[i][1]]=='O' && arr[winPatterns[i][2]]=='O'){
+                result('O');
+                return;
+            }
+    }
 }
 const reset = document.querySelector('.reset');
 reset.addEventListener('click', () => {
