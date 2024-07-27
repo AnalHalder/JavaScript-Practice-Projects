@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Updates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+
+    <nav class="flex justify-around bg-green-950 h-12 p-2">
+        <h1 onclick="reload()" class="text-violet-300 font-bold text-xl hover:text-violet-600 cursor-pointer">Daily Updates</h1>
+        <div class="flex gap-10">
+            <a href="#" onclick="fetchNews('cricket')" class="hover:text-blue-400">Cricket</a>
+            <a href="#" onclick="fetchNews('finance')" class="hover:text-blue-400">Finance</a>
+            <a href="#" onclick="fetchNews('technology')" class="hover:text-blue-400">Technology</a>
+        </div>
+        <div class="flex gap-5">
+            <input type="text" id="search-input" placeholder="income tax"
+            class="bg-slate-300 hover:bg-slate-100 outline-none p-2 text-violet-800">
+            <button class="bg-cyan-700 text-center w-16 hover:bg-cyan-400" onclick="searchNews()">Search</button>
+        </div>
+    </nav>
+    
+    <main id="container" class="flex flex-wrap gap-5 p-5 justify-center">
+      
+    </main>
+    
+    <template id="template">
+        <a href="" target="_blank" class="bg-white w-80 text-black p-5 rounded shadow-md no-underline">
+            <img src="" id="news-img" class="w-72 h-48 object-cover mb-4 rounded">
+            <h1 id="title" class="text-xl font-bold mb-2">Card Title</h1>
+            <p id="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fuga dolores labore nihil nam quisquam error!</p>
+        </a>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
